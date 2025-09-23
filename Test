@@ -1,0 +1,14 @@
+# tests/test_model.py
+import unittest
+from model import LoanRecoveryModel
+
+class TestLoanRecoveryModel(unittest.TestCase):
+    def setUp(self):
+        self.model = LoanRecoveryModel()
+
+    def test_prediction(self):
+        result = self.model.predict([1000, 30, 0.05])
+        self.assertTrue(result in ['Low Risk', 'High Risk'])
+
+if __name__ == '__main__':
+    unittest.main()
